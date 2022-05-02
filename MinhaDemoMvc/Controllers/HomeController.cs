@@ -7,7 +7,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MinhaDemoMvc.Controllers
+
+//aprendemos a criar um prefixo exclusivo ou não para uma controller.
+// aprendemos a complementar a rota atravpes das actions (posso ter uma rota vazia para cada controller)
+// mas posso ter apenas uma rota vazia de controller para a aplicação toda,
+// pq ele só pode redirecionar para uma controller quando ele não recebe nenhuma
+// mas dentro da controller eu posso ter uma rota vazia para uma action a cada controller
+// pq uma vez q ele encontra a controller, ele vai chamar aquele por padrão q estiver vazio
+
+namespace MinhaDemoMvc.Controllers 
 {
     [Route("")]
     [Route("gestao-clientes")]
