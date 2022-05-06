@@ -14,12 +14,33 @@ namespace MinhaDemoMvc.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+
+            var filme = new Filme
+            {
+                Titulo = "Oi",
+                DataLancamento = DateTime.Now,
+                Genero = null,
+                Avaliacao = 10,
+                Valor = 20000
+            };
+
+            return RedirectToAction("Privacy", filme);
+            //return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(Filme filme)
         {
-            return Content("qualquer coisa");
+            if(ModelState.IsValid)
+            {
+
+            }
+
+            foreach (var VARIABLE in ModelState.Values.SelectMany(m => m.Errors))
+            {
+                Console.WriteLine("Erro");
+            }
+
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
