@@ -13,33 +13,12 @@ namespace MinhaDemoMvc.Controllers
     public class HomeController : Controller
     {
         public IActionResult Index()
-        {
-
-            var filme = new Filme
-            {
-                Titulo = "Oi",
-                DataLancamento = DateTime.Now,
-                Genero = null,
-                Avaliacao = 10,
-                Valor = 20000
-            };
-
-            //return RedirectToAction("Privacy", filme);
+        {                        
             return View();
         }
 
         public IActionResult Privacy(Filme filme)
-        {
-            if(ModelState.IsValid)
-            {
-
-            }
-
-            foreach (var VARIABLE in ModelState.Values.SelectMany(m => m.Errors))
-            {
-                Console.WriteLine("Erro");
-            }
-
+        {           
             return View();
         }
 
