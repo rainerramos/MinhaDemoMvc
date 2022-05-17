@@ -19,6 +19,7 @@ namespace MinhaDemoMvc.Models
         [Display(Name = "Data de Lançamento")]
         public DateTime DataLancamento { get; set; }  
         
+        [RegularExpression(@"^[A-Z]+[a-zA-Z\u00FF""'\w-]*$", ErrorMessage = "Gênero em formato inválido")]
         [StringLength(30, ErrorMessage = "Máximo de 30 caracteres"), Required(ErrorMessage = "O campo gênero é requerido")]
         public string Genero { get; set; }
 
